@@ -8,15 +8,17 @@ using MelonLoader;
 using HarmonyLib;
 using MyBhapticsTactsuit;
 
+[assembly: MelonInfo(typeof(FruitNinjaVR_bhaptics.FruitNinjaVR_bhaptics), "FruitNinjaVR_bhaptics", "2.0.0", "Florian Fahrenberger")]
+[assembly: MelonGame("Halfbrick", "FruitNinja")]
+
 namespace FruitNinjaVR_bhaptics
 {
     public class FruitNinjaVR_bhaptics : MelonMod
     {
         public static TactsuitVR tactsuitVr;
 
-        public override void OnApplicationStart()
+        public override void OnInitializeMelon()
         {
-            base.OnApplicationStart();
             tactsuitVr = new TactsuitVR();
             tactsuitVr.PlaybackHaptics("HeartBeat");
         }
